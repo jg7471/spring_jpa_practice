@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 public class Product {
 
     @Id //Primary key 세팅
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //전략 다양함
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //전략 다양함 //auto 잘 안씀
     @Column(name = "prod_id") //테이블 생성시 id
     private Long id; //wrapper 타입 : 기본타입 null x, 객체타입 null o
 
