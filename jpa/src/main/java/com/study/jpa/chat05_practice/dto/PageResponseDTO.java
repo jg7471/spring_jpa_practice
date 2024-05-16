@@ -27,10 +27,10 @@ public class PageResponseDTO {
         //로직이 좀 더 간편해진 것임.
         this.totalCount = (int) pageData.getTotalElements(); //return long이라 int로 타입 변환
         this.currentPage = pageData.getPageable().getPageNumber() + 1; //-1 했었기에 +1함
-        this.endPage = (int) Math.ceil((double) currentPage / PAGE_COUNT) * PAGE_COUNT; //사용자가 17페이지 선택 / 표시 10 / 나머지 7 공식 @@@
+        this.endPage = (int) Math.ceil((double) currentPage / PAGE_COUNT) * PAGE_COUNT; //사용자가 17페이지 선택 / 표시 10 / 나머지 7 공식 @@
         this.startPage = endPage - PAGE_COUNT + 1;
 
-        int realEnd = pageData.getTotalPages();
+        int realEnd = pageData.getTotalPages();//리얼 끝 페이지 JPA에서 알려줌
         if (realEnd < this.endPage) this.endPage = realEnd;
 
         this.prev = startPage > 1;

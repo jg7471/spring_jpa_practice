@@ -80,7 +80,7 @@ class DepartmentTest {
         foundEmp.setDepartment(newDept);
         //newDept.getEmployees().add(foundEmp);
 
-        //EntityManager entityManager; 사용 관련 : 실행 시점 조절: 先 update 后 select(조회) @@@
+        //EntityManager entityManager; 사용 관련 : 실행 시점 조절: 先 update 后 select(조회) @@
         employeeRepository.save(foundEmp);
         //변경 감지(더티 체크) 후 변경된 내용을 DB에 즉시 반영하는 로직
         entityManager.flush(); //DB로 밀어내기

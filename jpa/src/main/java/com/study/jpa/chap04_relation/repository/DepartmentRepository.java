@@ -11,6 +11,6 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> { 
 
 
     //JPQL : entity 사용 : Department d // d.employees(JOIN FETCH)
-    @Query("SELECT d FROM Department d JOIN FETCH d.employees")
+    @Query("SELECT d FROM Department d JOIN FETCH d.employees") //조인시 한번
     List<Department> findAllIncludesEmployees();
 }
